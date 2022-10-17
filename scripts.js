@@ -34,6 +34,52 @@ const addDot = () => {
   }
 };
 
+const result = () => {
+  let currentAccumulator = document.getElementById("accumulator").innerHTML;
+  let currentNumber = document.getElementById("total").innerHTML;
+
+  if (currentAccumulator[currentAccumulator.length - 1] === "=" && currentNumber.legnth > 0) {
+    document.getElementById("total").innerHTML = processAction(Number(currentNumber), Number(currentNumber), saveAction).toString().substring(0, MAX_VISOR_CHAR);
+  }
+
+  if (count.length === 0) {
+    return;
+  }
+
+  count.push(Number(document.getElementById("total").innerHTML));
+  document.getElementById("accumulator").innerHTML += `${document.getElementById("total").innerHTML} =`;
+  processResult();
+};
+
+const processResult = () => {
+  let action = null;
+  let current = null;
+  let total = 0;
+
+  if (isNaN(count[count.length - 1])) {
+    count.pop();
+  }
+
+  count.forEach(n => {
+    if (!isNaN(n)) {
+      if (current == null) {
+        current = n;
+      } else {
+        total += processAction(current, n, action);
+        current = null;
+      }
+    } else {
+      action = n;
+      saveAction = n;
+    }
+  });
+  if (current != null) {
+    total = processAction(total, current, action);
+  }
+  document.getElementById("total").innerHTML = total.toString().substring(0, MAX_VISOR_CHAR);
+  count = [];
+};
+
 const processAction = (num1, num2, action) => {
   switch (action) {
     case '+': return num1 + num2;
