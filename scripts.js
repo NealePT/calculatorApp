@@ -89,3 +89,19 @@ const processAction = (num1, num2, action) => {
   }
 };
 
+const clearCurrentEntry = () => {
+  document.getElementById("total").innerHTML = "";
+};
+
+const clearAll = () => {
+  document.getElementById("total").innerHTML = "";
+  document.getElementById("accumulator").innerHTML = "";
+  count = [];
+};
+
+const percentage = () => {
+  let currentNumber = document.getElementById("total").innerHTML;
+  if (currentNumber != "") {
+    document.getElementById("total").innerHTML = Number(document.getElementById("total").innerHTML) / 100;
+  }
+};
