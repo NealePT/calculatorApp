@@ -1,7 +1,7 @@
-let count = []
-let saveAction
+let count = [];
+let saveAction;
 
-const MAX_VISOR_CHAR = 10
+const MAX_VISOR_CHAR = 10;
 
 const addNumber = (num) => {
   document.getElementById("total").removeAttribute("hidden")
