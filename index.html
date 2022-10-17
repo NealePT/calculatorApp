@@ -14,25 +14,25 @@
       <div id="accumulator" class="acc"></div>
       <div id="total" class="total"></div>
     </div>
-    <div class="number action">C</div>
-    <div class="number action">CE</div>
-    <div class="number action">%</div>
-    <div class="number action">/</div>
-    <div class="number">7</div>
-    <div class="number">8</div>
-    <div class="number">9</div>
-    <div class="number action">x</div>
-    <div class="number">4</div>
-    <div class="number">5</div>
-    <div class="number">6</div>
-    <div class="number action">-</div>
-    <div class="number">1</div>
-    <div class="number">2</div>
-    <div class="number">3</div>
-    <div class="number action">+</div>
-    <div class="number zero">0</div>
-    <div class="number">.</div>
-    <div class="number action equals">=</div>
+    <div class="number action" onClick="clearAll()">C</div>
+    <div class="number action" onClick="clearCurrentEntry()">CE</div>
+    <div class="number action" onClick="percentage()">%</div>
+    <div class="number action" onClick="calcAction('/')">/</div>
+    <div class="number" onClick="addNumber(7)">7</div>
+    <div class="number" onClick="addNumber(8)">8</div>
+    <div class="number" onClick="addNumber(9)">9</div>
+    <div class="number action" onClick="calcAction('x')">x</div>
+    <div class="number" onClick="addNumber(4)">4</div>
+    <div class="number" onClick="addNumber(5)">5</div>
+    <div class="number" onClick="addNumber(6)">6</div>
+    <div class="number action" onClick="calcAction('-')">-</div>
+    <div class="number" onClick="addNumber(1)">1</div>
+    <div class="number" onClick="addNumber(2)">2</div>
+    <div class="number" onClick="addNumber(3)">3</div>
+    <div class="number action" onClick="calcAction('+')">+</div>
+    <div class="number zero" onClick="addNumber(0)">0</div>
+    <div class="number" onClick="addDot()">.</div>
+    <div class="number action equals" onClick="result()">=</div>
   </div>
 </body>
 <script src="scripts.js"></script>
