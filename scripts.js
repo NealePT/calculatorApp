@@ -4,9 +4,9 @@ let saveAction;
 const MAX_VISOR_CHAR = 10;
 
 const addNumber = (num) => {
-  document.getElementById("total").removeAttribute("hidden")
+  document.getElementById("total").removeAttribute("hidden");
   if (document.getElementById("total").innerHTML.length < MAX_VISOR_CHAR) {
-    document.getElementById("total").innerHTML += num
+    document.getElementById("total").innerHTML += num;
   }
 };
 
@@ -73,6 +73,7 @@ const processResult = () => {
       saveAction = n;
     }
   });
+
   if (current != null) {
     total = processAction(total, current, action);
   }
