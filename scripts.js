@@ -26,6 +26,14 @@ const calcAction = (action) => {
   count.push(action);
 };
 
+const addDot = () => {
+  let currentNumber = document.getElementById("total").innerHTML;
+
+  if (!currentNumber.includes(".")) {
+    document.getElementById("total").innerHTML += ".";
+  }
+};
+
 const processAction = (num1, num2, action) => {
   switch (action) {
     case '+': return num1 + num2;
