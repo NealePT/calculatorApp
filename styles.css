@@ -10,6 +10,9 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 /* Custom Styles Start Here */
 
+html {
+  background: black;
+}
 
 .calculator {
   position:fixed;
